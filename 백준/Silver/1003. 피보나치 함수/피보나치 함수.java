@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); //스캐너
 
-        //exception in thread main 에러를 피하기 위해 리스트 기본 값 지정(null pointer)
+        //null pointer 에러를 피하기 위해 리스트 기본 값 지정
         dp[0][0] = 1;
         dp[0][1] = 0;
         dp[1][0] = 0;
