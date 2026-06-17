@@ -1,20 +1,13 @@
 class Solution {
     public int[] solution(int[] arr, int[][] queries) {
-        int[] answer = new int[queries.length];
-
-        for (int q = 0; q < queries.length; q++) {
-            int[] query = queries[q];
-            int min = Integer.MAX_VALUE;
-
-            for (int i = query[0]; i <= query[1]; i++) {
-                if (arr[i] > query[2]) {
-                    min = Math.min(min, arr[i]);
+        int[] answer = {};
+        for (int[] query : queries) {
+            for (int i : arr) {
+                if (query[0] <= i && i >= query[2] && i <= query[1]) {
+                    answer[answer.length] = i;
                 }
             }
-
-            answer[q] = min == Integer.MAX_VALUE ? -1 : min;
         }
-
         return answer;
     }
 }
